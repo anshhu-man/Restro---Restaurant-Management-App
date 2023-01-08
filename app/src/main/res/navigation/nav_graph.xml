@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/userLoginFragment"
+        android:name="com.example.restro.UserLoginFragment"
+        android:label="fragment_user_login"
+        tools:layout="@layout/fragment_user_login" >
+        <action
+            android:id="@+id/action_userLoginFragment_to_userRegisterFragment"
+            app:destination="@id/userRegisterFragment" />
+        <action
+            android:id="@+id/action_userLoginFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userRegisterFragment"
+        android:name="com.example.restro.UserRegisterFragment"
+        android:label="fragment_user_register"
+        tools:layout="@layout/fragment_user_register" >
+        <action
+            android:id="@+id/action_userRegisterFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment" />
+        <action
+            android:id="@+id/action_userRegisterFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.restro.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_statusFragment2"
+            app:destination="@id/statusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statusFragment"
+        android:name="com.example.restro.StatusFragment"
+        android:label="fragment_status"
+        tools:layout="@layout/fragment_status" >
+        <action
+            android:id="@+id/action_statusFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ownerLoginFragment"
+        android:name="com.example.restro.OwnerLoginFragment"
+        android:label="fragment_owner_login"
+        tools:layout="@layout/fragment_owner_login" >
+        <action
+            android:id="@+id/action_ownerLoginFragment_to_ownerRegisterFragment"
+            app:destination="@id/ownerRegisterFragment" />
+        <action
+            android:id="@+id/action_ownerLoginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ownerRegisterFragment"
+        android:name="com.example.restro.OwnerRegisterFragment"
+        android:label="fragment_owner_register"
+        tools:layout="@layout/fragment_owner_register" >
+        <action
+            android:id="@+id/action_ownerRegisterFragment_to_ownerLoginFragment"
+            app:destination="@id/ownerLoginFragment" />
+        <action
+            android:id="@+id/action_ownerRegisterFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.restro.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_ownerRegisterFragment"
+            app:destination="@id/ownerRegisterFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_userRegisterFragment"
+            app:destination="@id/userRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userHomeFragment"
+        android:name="com.example.restro.UserHomeFragment"
+        android:label="fragment_user_home"
+        tools:layout="@layout/fragment_user_home" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.restro.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+    </fragment>
+</navigation>
